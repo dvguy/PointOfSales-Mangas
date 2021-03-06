@@ -2,64 +2,67 @@
         <p class="indicator">COMPLETAR PAGO</p>				
     </div>
 
-    <p class="separador">-------------------<strong>DATOS DE VENTA</strong>------------------</p>
+    <div class="_container">
+        <p class="separador">-------------------<strong>DATOS DE VENTA</strong>-----------------</p>
 
-    <table>
-        <tr>
-            <td>NUMERO DE TICKET</td>
-            <td>1</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>FECHA</td>
-            <td>01/03/2021</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>HORA</td>
-            <td>16:38 PM</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>VENDEDOR</td>
-            <td>FERNANDO</td><!--HACER DINÁMICO-->
-        </tr>
-    </table>
-
-    <p class="separador">----------------------<strong>DESGLOSE</strong>---------------------</p>
-
-    <table>
-        
-        <tr>
-            <td>ELEMENTOS EN LA BOLSA</td>
-            <td>10</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>IMPORTE A PAGAR</td>
-            <td>$1000</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>IMPORTE RECIBIDO</td>
-            <td>$2000</td><!--HACER DINÁMICO-->
-        </tr>
-
-        <tr>
-            <td>CAMBIO</td>
-            <td>$1000</td><!--HACER DINÁMICO-->
-        </tr>
-
-    </table>
-
-    <p class="separador">--------------------<strong>DESCRIPCIÓN</strong>--------------------</p>
-
-    <table>
-
-        <tr>
-            <th>UNIDADES</th>
-            <th>DESCRIPCION</th>
-            <th>PRECIO UNITARIO</th>
-        </tr>
+        <table>
+            <tr>
+                <td>NÚMERO DE TICKET</td>
+                <td class="_dinamicInfoData">1</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>FECHA</td>
+                <td class="_dinamicInfoData">01/03/2021</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>HORA</td>
+                <td class="_dinamicInfoData">16:38 PM</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>VENDEDOR</td>
+                <td class="_dinamicInfoData">FERNANDO</td><!--HACER DINÁMICO-->
+            </tr>
+        </table>
+    
+        <p class="separador">----------------------<strong>DESGLOSE</strong>--------------------</p>
+    
+        <table>
             
-    </table>
+            <tr>
+                <td>ELEMENTOS EN LA BOLSA</td>
+                <td class="_dinamicInfo" id="elementsInCart">10</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>IMPORTE A PAGAR</td>
+                <td class="_dinamicInfo" id="totalImport">$1000</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>IMPORTE RECIBIDO</td>
+                <td class="_dinamicInfo">$2000</td><!--HACER DINÁMICO-->
+            </tr>
+    
+            <tr>
+                <td>CAMBIO</td>
+                <td class="_dinamicInfo">$1000</td><!--HACER DINÁMICO-->
+            </tr>
+    
+        </table>
+    
+        <p class="separador">---------------------------------------------------</p>
+    
+        <table>
+    
+            <tr>
+                <th class="_descriptionInfo">UNIDADES</th>
+                <th class="_descriptionInfo">DESCRIPCIÓN</th>
+                <th class="_descriptionInfo">PRECIO UNITARIO</th>
+            </tr>
+                
+        </table>    
+    </div>
+   

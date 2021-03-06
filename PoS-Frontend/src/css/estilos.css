@@ -91,7 +91,6 @@ body{
 	cursor: pointer;
 	font-family: my5Font;
 	font-size: 96%;
-	/* margin-top: 4%; */
 	padding: 8px;
 	width: 16%;
 	margin-top: 169%;
@@ -100,6 +99,11 @@ body{
 .container{
 	margin: 0 auto;
 	width: 85%;
+}
+
+._container{
+	margin: 0 auto;
+    width: 38%;
 }
 
 .datos{
@@ -112,6 +116,19 @@ body{
 	outline: none;
 	padding-left: 22px;
 	width: 30%;
+}
+
+._dinamicInfo{
+	padding-left: 8vw;
+}
+
+._dinamicInfoData{
+	padding-left: 12vw;
+}
+
+._descriptionInfo{
+    padding-right: 3vw;
+	padding-left: 1vw;
 }
 
 #divformulario{
@@ -220,10 +237,8 @@ label{
 	padding-right: 1%;
 }
 
-#payment{
-	/* display: inline;
-	margin-left: -31%; */
-    -webkit-writing-mode: vertical-rl;
+#paymentButtonContainer{
+    writing-mode: vertical-rl;
 }
 
 #salesContainer{
@@ -234,7 +249,7 @@ label{
 
 .separador{
 	font-family: my5Font;
-	font-size: 110%;
+	font-size: calc(0.2em + 1vw);
 	padding-bottom: 10px;
 }
 
@@ -242,14 +257,9 @@ td, th{
 	padding-right: 40px;
 	padding-bottom: 10px;
 	font-family: my5Font;
-	font-size: 110%;
+	font-size: calc(0.2em + 1vw);
 }
 
-/*td, th{
-
-	padding: 5px 40px;
-
-}*/
 #quantity{
 	box-sizing: border-box;
 	display: inline-block;
