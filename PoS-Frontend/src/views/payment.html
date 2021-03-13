@@ -8,61 +8,61 @@
         <table>
             <tr>
                 <td>NÚMERO DE TICKET</td>
-                <td class="_dinamicInfoData">1</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo_Data">1</td><!--HACER DINÁMICO-->
             </tr>
     
             <tr>
                 <td>FECHA</td>
-                <td class="_dinamicInfoData">01/03/2021</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo_Data">01/03/2021</td><!--HACER DINÁMICO-->
             </tr>
     
             <tr>
                 <td>HORA</td>
-                <td class="_dinamicInfoData">16:38 PM</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo_Data">16:38 PM</td><!--HACER DINÁMICO-->
             </tr>
     
             <tr>
                 <td>VENDEDOR</td>
-                <td class="_dinamicInfoData">FERNANDO</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo_Data">FERNANDO</td><!--HACER DINÁMICO-->
             </tr>
         </table>
     
-        <p class="separador">----------------------<strong>DESGLOSE</strong>--------------------</p>
+        <p class="separador">---------------------<strong>DESGLOSE</strong>--------------------</p>
     
         <table>
             
             <tr>
                 <td>ELEMENTOS EN LA BOLSA</td>
-                <td class="_dinamicInfo" id="elementsInCart">10</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo" id="elementsInCart">10</td>
             </tr>
     
             <tr>
                 <td>IMPORTE A PAGAR</td>
-                <td class="_dinamicInfo" id="totalImport">$1000</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo" id="totalImport">$1000</td>
             </tr>
     
             <tr>
                 <td>IMPORTE RECIBIDO</td>
-                <td class="_dinamicInfo">$2000</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo"><input id="inputImport" pattern="[0-9\s]+"  autocomplete="off" required></td><!--HACER DINÁMICO-->
             </tr>
     
             <tr>
                 <td>CAMBIO</td>
-                <td class="_dinamicInfo">$1000</td><!--HACER DINÁMICO-->
+                <td class="_dinamicInfo" id="change"></td>
             </tr>
     
         </table>
     
         <p class="separador">---------------------------------------------------</p>
     
-        <table>
+        <table id="description_Table">
     
             <tr>
-                <th class="_descriptionInfo">UNIDADES</th>
-                <th class="_descriptionInfo">DESCRIPCIÓN</th>
-                <th class="_descriptionInfo">PRECIO UNITARIO</th>
+                <th class="_descriptionInfo" id="unitys">UNIDADES</th>
+                <th class="_descriptionInfo" id="description_MangaName">DESCRIPCIÓN</th>
+                <th class="_descriptionInfo" id="unitaryPrice">PRECIO UNITARIO</th>
             </tr>
-                
+
         </table>    
     </div>
    

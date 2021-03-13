@@ -119,11 +119,23 @@ body{
 }
 
 ._dinamicInfo{
-	padding-left: 8vw;
+	padding-left: 9vw;
 }
 
-._dinamicInfoData{
+._dinamicInfo_Data{
 	padding-left: 12vw;
+}
+
+._dinamicInfo_Description_First{
+	padding-left: 3vw;
+}
+
+._dinamicInfo_Description_Second{
+	padding-left: 1vw;
+}
+
+._dinamicInfo_Description_Third{
+	padding-left: 5vw;
 }
 
 ._descriptionInfo{
@@ -192,6 +204,13 @@ header{
 #infoDiv{
 	display: inline-block;
     vertical-align: top;
+}
+
+#inputImport{
+	width: 5vw;
+	outline:none;
+	outline-width: 0;
+	box-shadow: none;
 }
 
 label{

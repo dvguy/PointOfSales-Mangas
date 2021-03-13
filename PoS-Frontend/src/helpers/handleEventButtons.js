@@ -68,7 +68,7 @@ function handleSubstract(){
 
         amountinfo.innerHTML = `En existencia: ${actualQty}`;
         
-        arrayQty[buttonClicked].splice(buttonClicked,1,arrayQty[buttonClicked][0]);
+        arrayQty[buttonClicked].splice(0,arrayQty.length,arrayQty[buttonClicked][0]);
         mangasStock.splice(buttonClicked, 1, actualQty);
 
     }else if(cartArray.length >= 1){ 

@@ -35,8 +35,8 @@ function searchScreen(){
     
     const req = (e) => {
         e.preventDefault()
-        let slash = "/"
-        let url =`http://127.0.0.1:1000${slash}${input.value}`;
+        //let slash = "/"
+        let url =`http://127.0.0.1:1000/inventory/${input.value}`;
         fetch(url).then(response => {
         return response.json()
         }).then(json =>{

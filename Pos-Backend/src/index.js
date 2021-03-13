@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 //Routes
-app.use(require('./routes/mangas'));
+app.use(require('./routes/inventory'));
 
 //Starting server
 app.listen(port, function() {
