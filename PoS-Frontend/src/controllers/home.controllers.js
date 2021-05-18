@@ -1,4 +1,5 @@
 import home from '../views/home.html';
+import {DateTime} from 'luxon';
 
 let amount = '';
 let mangaFound = new Set()
@@ -6,6 +7,10 @@ let mangaFoundArray = [];
 
 
 function searchScreen(){
+
+    // let dt = DateTime.now();
+
+    // console.log(dt.toLocaleString(DateTime.TIME_SIMPLE))
 
     const divElement = document.createElement('div');
 
@@ -81,6 +86,31 @@ function searchScreen(){
 
         return false;
     }
+
+
+    // /**NOS QUEDAMOS AQUI Y YA TENEMOS EL NÚMERO DE LA TRANSACCIÓN */
+    // let lastTicketNumber = [];
+
+    // function getTicket(e){
+    //     // e.preventDefault()
+    //     let url =`http://127.0.0.1:1000/employees`;
+
+    //     fetch(url).then(response => {
+    //     return response.json()
+    //     }).then(json =>{
+    //         let ticketN = json[json.length - 1].transaction_number;
+    //         lastTicketNumber.push(ticketN);
+    //     })
+    //     .catch(() => {
+    //         console.log("ERROR")
+    //     })
+    // }
+
+    // getTicket()
+
+    // setTimeout(() => {
+    //     console.log(lastTicketNumber[0] + 1)
+    // }, 1000);
 
     button1.addEventListener( 'click', comprar );
     button2.addEventListener( 'click', addToCart );

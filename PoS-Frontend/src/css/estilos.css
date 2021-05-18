@@ -96,6 +96,17 @@ body{
 	margin-top: 169%;
 }
 
+.btn_payment_screen{
+	background-color: #eaea2a;
+    cursor: pointer;
+	font-family: my5Font;
+	font-weight: bold;
+	margin-left: 21%;
+	margin-top: 10%;
+	outline: none;
+	width: 50%;
+}
+
 .container{
 	margin: 0 auto;
 	width: 85%;
