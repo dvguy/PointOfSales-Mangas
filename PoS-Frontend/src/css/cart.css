@@ -1,0 +1,103 @@
+.addCart{
+	background-color: #15b101;
+    box-sizing: border-box;
+    padding-left: 1%;
+    padding-right: 1%;
+    color: white;
+    font-family: my5Font;
+    font-size: 100%;
+    margin-top: -2.40%;
+	padding: 1%;
+	height: 1px;
+    text-align: center;
+}
+
+.addCart p{
+	margin-top: -9px;
+}
+
+#btn{
+	background-color: #eaea2a;
+	border-color: #eaea2a;
+	color: black;
+	cursor: pointer;
+	font-size: 70%;
+	font-family: my5Font;
+	height: 40px;
+	margin-top: 1%;
+	outline: none;
+	width: 18%;
+}
+
+.btn1{
+	background-color: #eaea2a;
+	border-color: #eaea2a;
+	color: black;
+	cursor: pointer;
+	font-size: 70%;
+	font-family: my5Font;
+	height: 40px;
+	margin-top: 1%;
+	margin-right: 8%;
+    margin-top: 3%;
+	outline: none;
+	width: 18%;
+}
+
+.btn2{ 
+	background-color: #eaea2a;
+	border-color: #eaea2a;
+	color: black;
+	cursor: pointer;
+	font-size: 60%;
+	font-family: my5Font;
+	height: 40px;
+	margin-top: 1%;
+	outline: none;
+	width: 18%;
+}
+
+.datos{
+	background-color: rgb(77,77,77, .7);
+	border-color: #02d7f2;
+	color: white;
+	font-size: 70%;
+	height: 25px;
+	margin-bottom: 1.5%;
+	outline: none;
+	padding-left: 22px;
+	width: 30%;
+}
+
+#divformulario{ 
+	box-sizing: border-box; 
+	background-size: 100%;
+	box-sizing: border-box; 
+	font-size: 180%;
+	font-family: my5Font;
+	padding: 2%;
+	text-align: center;
+	width: 100%;
+}
+
+#imagen{
+	height: 10%;
+	object-fit: cover;
+	width: 15%;
+}
+
+.indicator{ 
+	color: white;
+	font-family: my5Font;
+	font-size: 150%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#parrafo{
+	background-color: #ff52a8;
+	box-sizing: border-box;
+	padding-left: 1%;
+	padding-right: 1%;
+}

@@ -1,0 +1,26 @@
+#divformulario{
+	box-sizing: border-box; 
+	background-size: 100%;
+	box-sizing: border-box; 
+	font-size: 180%;
+	font-family: my5Font;
+	padding: 2%;
+	text-align: center;
+	width: 100%;
+}
+
+.indicator{
+	color: white;
+	font-family: my5Font;
+	font-size: 150%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#parrafo2{ 
+	background-color: #15b101;
+	box-sizing: border-box;
+	padding-left: 1%;
+	padding-right: 1%;
+}

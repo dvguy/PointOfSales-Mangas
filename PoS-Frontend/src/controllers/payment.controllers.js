@@ -1,18 +1,20 @@
 import payment from '../views/payment.html';
 import { arrayQty, mangasStock } from './comprar.controllers';
 import {qty} from '../helpers/handleEventButtons';
-import {mangaFoundArray} from './home.controllers';
+import {mangaFoundArray, amount} from './home.controllers';
 import { cartArray } from './cart.controllers';
 import { DateTime } from 'luxon';
 
-let dataFromTicket = {
-    "date" : "2021-05-17",
-    "hour" : "6:47",
-    "name" : "antitesis"
+
+
+function afterPayment(e){
+    e.preventDefault();
+    location.href = "#/afterPayment";
 }
 
-function paymentScreen() {    
+function paymentScreen() {   
     
+
     let dt = DateTime.now();
     let date = dt.toISODate();
     let hour = dt.toLocaleString(DateTime.TIME_SIMPLE);
@@ -63,10 +65,12 @@ function paymentScreen() {
     /**This code gets the last ticket number from the db plus 1*/
     let lastTicketNumber = [];
 
-    function getTicket(e){
-        let url =`http://127.0.0.1:1000/employees`;
 
-        fetch(url).then(response => {
+
+    function getTicket(e){
+        let urlToGet =`http://127.0.0.1:1000/employees`;
+
+        fetch(urlToGet).then(response => {
         return response.json()
         }).then(json =>{
             let ticketN = json[json.length - 1].transaction_number;
@@ -84,45 +88,63 @@ function paymentScreen() {
         ticketInfo.textContent = ticketNumber;
     }, 100);
 
-    function addToObjetc() {
-        dataFromTicket.date = date;
-        dataFromTicket.hour = hour;
-        dataFromTicket.name = "Fernando";
 
-        console.log(dataFromTicket)
+/*********************************** FUNCION POST ****************************************/
+
+
+    let dataFromTicket = {
+        date : date,
+        hour : hour,
+        name : "Ander"
     }
 
-    btn_payment_screen.addEventListener("click", addToObjetc)
+    let newStockForTheDataBase = {
+        "stock": amount - qty
+    }
 
-    // const data = new FormData();
-    // data.append('date', '2021-05-17');
-    // data.append('hour', '05:41');
-    // data.append('name', 'Reven');
+    let url = 'http://localhost:1000/';
 
+    function postTicket() {
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataFromTicket) // data can be `string` or {object}!
+        })
+    }
 
+    function modifyStock() {
+       if(cartArray.length){
+           for(let i = 0; i < cartArray.length; i++){
+            
+            let newStockForTheDataBaseMoreThanOneElement = {
+                "stock": cartArray[i].stock - arrayQty[i] //cartArray contains the mangas added to de cart or bag, and arrayQTY is the amount of mangas to sell
+            }
 
-    // function postTicket(){
-    //     fetch('http://127.0.0.1:1000/', {
-    //         method: 'POST',
-    //         body: data
-    //      })
-    //      .then(function(response) {
-    //         if(response.ok) {
-    //             return response.text()
-    //         } else {
-    //             throw "Error en la llamada Ajax";
-    //         }
-         
-    //      })
-    //      .then(function(texto) {
-    //         console.log(texto);
-    //      })
-    //      .catch(function(err) {
-    //         console.log(err);
-    //      });
-    // }
+            fetch(`${url}inventory/${cartArray[i].title}`, {
+                method: 'PUT',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newStockForTheDataBaseMoreThanOneElement)
+            })
+           }
+       }else{
+            fetch(`${url}inventory/${mangaFoundArray[0].title}`, {
+                method: 'PUT',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newStockForTheDataBase)
+            })
+       }
+    }
     
-    // btn_payment_screen.addEventListener('click', postTicket);
+    
+    btn_payment_screen.addEventListener('click', postTicket);
+    btn_payment_screen.addEventListener('click', modifyStock);
+    btn_payment_screen.addEventListener('click', afterPayment);
 
 
 
@@ -147,6 +169,7 @@ function paymentScreen() {
             tr.appendChild(td_unitaryPrice)
         }
     }else{
+
         const tr = document.createElement("tr");
         const td_unitys = document.createElement("td");
         const td_MangaName = document.createElement("td");
@@ -170,7 +193,7 @@ function paymentScreen() {
     return divElement
 }
 
-export {paymentScreen, dataFromTicket}
+export {paymentScreen}
 
 
 
@@ -187,30 +210,3 @@ export {paymentScreen, dataFromTicket}
 
 
 
-
-
-    // // Ejemplo implementando el metodo POST:
-    // async function postData(url = '', data = {}) {
-    //     // Opciones por defecto estan marcadas con un *
-    //     const response = await fetch(url, {
-    //         method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data) // body data type must match "Content-Type" header
-    //     });
-
-    //     return response.json(); // parses JSON response into native JavaScript objects
-    // }
-
-
-    // btn_payment_screen.addEventListener('click', 
-    //     postData('http://127.0.0.1:1000/', { "answer": 42 })
-    //         .then(data => {
-    //             console.log(data); // JSON data parsed by `data.json()` call
-    //         })
-    // );
-
-    // // "date": "16/05/2021",
-    // // "hour": "10:40",
-    // // "name": "Ibai"

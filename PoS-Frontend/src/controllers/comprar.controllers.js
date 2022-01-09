@@ -23,8 +23,7 @@ window.addEventListener('hashchange', () => {
 });
 
 
-function salesScreen() {
-    
+function salesScreen() {    
 
     let title = mangaFoundArray[0].title
 
@@ -87,8 +86,6 @@ function salesScreen() {
                 let currentIndex = parseInt(e.target.innerHTML) - 1
                 buttonClicked = currentIndex;
                 qty = 1
-
-                console.log("buttonQtyMangas")
 
                 img.setAttribute("src",cartArray[i].image)
                 priceinfo.innerHTML = `Precio: $${cartArray[i].price}`;

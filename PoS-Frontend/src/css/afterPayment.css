@@ -1,0 +1,46 @@
+.btn4{
+	background-color: #eaea2a;
+	border-color: #eaea2a;
+	color: black;
+	cursor: pointer;
+	font-size: 70%;
+	font-family: my5Font;
+	height: 40px;
+	margin-top: 1%;
+    margin-top: 3%;
+	outline: none;
+	width: 30%;
+}
+
+#divformulario{
+	box-sizing: border-box; 
+	background-size: 100%;
+	box-sizing: border-box; 
+	font-size: 180%;
+	font-family: my5Font;
+	padding: 2%;
+	text-align: center;
+	width: 100%;
+}
+
+#imagenParting{
+	height: 10%;
+	object-fit: cover;
+	width: 40%;
+}
+
+.indicator{
+	color: white;
+	font-family: my5Font;
+	font-size: 150%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#parrafo2{
+	background-color: #15b101;
+	box-sizing: border-box;
+	padding-left: 1%;
+	padding-right: 1%;
+}

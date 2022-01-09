@@ -1,10 +1,6 @@
-import express from 'express'; //Antes era const express require(express)
-import { fileURLToPath } from 'url';//NO ESTABA
-import { dirname } from 'path';//NO ESTABA
+const express = require('express');
 
-const __filename = fileURLToPath(import.meta.url);//NO ESTABA
-const __dirname = dirname(__filename);//NO ESTABA
-
+/******************************MIDDLEWARE******************************** */
 
 const app = express();
 const port = process.env.port || 1000;
@@ -23,14 +19,14 @@ app.use((req,res,next) => {
 
 //Middlewares
 app.use(express.json());
+app.use(express.urlencoded({extended: true})); //Esto desactiva esta opción y permite enviar info mediante formularios
 
-app.use(express.urlencoded({extended: false})); //Esto desactiva esta opción y permite enviar info mediante formularios
-
-//Routes //app.use(require('./routes/inventory'));
-app.use('./routes/inventory');
+//Routes 
+app.use(require('./routes/inventory'));
 
 //Starting server
 app.listen(port, function() {
   console.log('Servidor web escuchando en el puerto', port);
 });
 
+/******************************MIDDLEWARE******************************** */
