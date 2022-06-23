@@ -22,6 +22,7 @@ function searchScreen(){
     const button1 = divElement.querySelector('#btn1');
     const button2 = divElement.querySelector('#btn2');
     const li = divElement.querySelector('#li');
+    const btnToInventory = divElement.querySelector('#btnModifyInventory')
 
     function comprar(e){
         e.preventDefault()
@@ -32,11 +33,16 @@ function searchScreen(){
         e.preventDefault()
         location.href = "#/cart"
     }
+
+    function sendToInventory(e){
+        e.preventDefault()
+        location.href = "#/modifyInventory"
+    }
     
     const req = (e) => {
         e.preventDefault()
-        let slash = "/"
-        let url =`http://127.0.0.1:1000${slash}${input.value}`;
+        //let slash = "/"
+        let url =`http://127.0.0.1:1000/inventory/${input.value}`;
         fetch(url).then(response => {
         return response.json()
         }).then(json =>{
@@ -87,7 +93,8 @@ function searchScreen(){
 
     btn.addEventListener("click", req);
 
-   
+    btnToInventory.addEventListener('click', sendToInventory);
+
     return divElement
 }
 

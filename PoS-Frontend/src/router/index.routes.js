@@ -23,6 +23,14 @@ const router = (route) => {
             return content.appendChild(pages.payment())
         }
 
+        case '#/afterPayment': {
+            return content.appendChild(pages.afterPayment())
+        }
+
+        case '#/modifyInventory': {
+            return content.appendChild(pages.modifyInventory())
+        }
+
         default:
             return console.log("404 NOT FOUND")
     }

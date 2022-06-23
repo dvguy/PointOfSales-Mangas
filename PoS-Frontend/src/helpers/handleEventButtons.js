@@ -20,7 +20,8 @@ function handleAdd(){
 
         amountinfo.innerHTML = `En existencia: ${actualQty}`;
         
-        arrayQty[buttonClicked].splice(buttonClicked,1,arrayQty[buttonClicked][0]);
+        arrayQty[buttonClicked].splice(0,arrayQty.length,arrayQty[buttonClicked][0]); //Here we use buttonClicked before ".splice" to point at the current index of the manga in arrayQty
+        
         mangasStock.splice(buttonClicked, 1, actualQty);
 
     }else if(cartArray.length >= 1){ 
@@ -32,6 +33,7 @@ function handleAdd(){
         amountinfo.innerHTML = `En existencia: ${actualQty}`;
         
         mangasStock.splice(buttonClicked, 1, actualQty);
+
         arrayQty[0].splice(buttonClicked,1,arrayQty[buttonClicked][0]);
 
         buttonAddPressed = true;
@@ -66,7 +68,7 @@ function handleSubstract(){
 
         amountinfo.innerHTML = `En existencia: ${actualQty}`;
         
-        arrayQty[buttonClicked].splice(buttonClicked,1,arrayQty[buttonClicked][0]);
+        arrayQty[buttonClicked].splice(0,arrayQty.length,arrayQty[buttonClicked][0]);
         mangasStock.splice(buttonClicked, 1, actualQty);
 
     }else if(cartArray.length >= 1){ 
@@ -95,7 +97,7 @@ function handleSubstract(){
 };
 
 
-export {handleAdd, handleSubstract, buttonAddPressed}
+export {handleAdd, handleSubstract, buttonAddPressed, qty}
 
 
 

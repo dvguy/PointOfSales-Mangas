@@ -1,19 +1,20 @@
 const mysql = require('mysql');
 
-const conexion = mysql.createConnection({
+const connection = mysql.createConnection({
         database: 'mangas',
         host: 'localhost',
         user: 'root',
         password: ''
-    });
-
-conexion.connect(function(err){
-    if(err){
-        console.log(err);
-        return;
-    }else{
-        console.log('database connected');
-    }
 });
 
-module.exports = conexion;
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  }
+ 
+  console.log('connected as id ' + connection.threadId);
+});
+
+module.exports = connection;

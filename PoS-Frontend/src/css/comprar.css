@@ -1,0 +1,67 @@
+.btn3{
+	background-color: #eaea2a;
+    cursor: pointer;
+	font-family: my5Font;
+	font-weight: bold;
+	height: 30px;
+	margin-right: 2%;
+	outline: none;
+    width: 40px;
+}
+
+#btnPayment{ /*ESTE ESTA EN COMPRAR*/
+	background-color: #15b101;
+	color: white;
+	cursor: pointer;
+	font-family: my5Font;
+	font-size: 96%;
+	padding: 8px;
+	width: 16%;
+	margin-top: 169%;
+}
+
+.imageCard{
+	display: contents;
+}
+
+#imageSales{
+	display: inline-block;
+	height: 55vh;
+	margin-right: 4%;
+	object-fit: cover;
+}
+
+.indicator{
+	color: white;
+	font-family: my5Font;
+	font-size: 150%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#infoDiv{
+	display: inline-block;
+    vertical-align: top;
+}
+
+#parrafo{
+	background-color: #ff52a8;
+	box-sizing: border-box;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+#quantity{
+	box-sizing: border-box;
+	display: inline-block;
+	font-family: 'my5Font';
+	font-size: 120%;
+	margin-right: 2%;
+}
+
+#salesContainer{
+	margin: 0 auto;
+	margin-top: 3%;
+	width: 80%;
+}

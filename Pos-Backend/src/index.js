@@ -1,4 +1,7 @@
 const express = require('express');
+
+/******************************MIDDLEWARE******************************** */
+
 const app = express();
 const port = process.env.port || 1000;
 
@@ -16,13 +19,14 @@ app.use((req,res,next) => {
 
 //Middlewares
 app.use(express.json());
+app.use(express.urlencoded({extended: true})); //Esto desactiva esta opción y permite enviar info mediante formularios
 
-
-//Routes
-app.use(require('./routes/mangas'));
+//Routes 
+app.use(require('./routes/inventory'));
 
 //Starting server
 app.listen(port, function() {
   console.log('Servidor web escuchando en el puerto', port);
 });
 
+/******************************MIDDLEWARE******************************** */

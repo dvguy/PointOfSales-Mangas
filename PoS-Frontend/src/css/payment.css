@@ -1,0 +1,55 @@
+.container{
+	margin: 0 auto;
+	width: 85%;
+}
+
+._container{
+	margin: 0 auto;
+    width: 38%;
+}
+
+.btn_payment_screen{
+	background-color: #eaea2a;
+    cursor: pointer;
+	font-family: my5Font;
+	font-weight: bold;
+	margin-left: 21%;
+	margin-top: 10%;
+	outline: none;
+	width: 50%;
+}
+
+._descriptionInfo{ /*ESTO YA ESTA EN PAYMENT*/
+    padding-right: 3vw;
+	padding-left: 1vw;
+}
+
+._dinamicInfo{ 
+	padding-left: 9vw;
+}
+
+._dinamicInfo_Data{
+	padding-left: 12vw;
+}
+
+.indicator{ 
+	color: white;
+	font-family: my5Font;
+	font-size: 150%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#parrafo{
+	background-color: #ff52a8;
+	box-sizing: border-box;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.separador{ 
+	font-family: my5Font;
+	font-size: calc(0.2em + 1vw);
+	padding-bottom: 10px;
+}

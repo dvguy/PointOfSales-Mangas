@@ -23,8 +23,7 @@ window.addEventListener('hashchange', () => {
 });
 
 
-function salesScreen() {
-    
+function salesScreen() {    
 
     let title = mangaFoundArray[0].title
 
@@ -88,8 +87,6 @@ function salesScreen() {
                 buttonClicked = currentIndex;
                 qty = 1
 
-                console.log("buttonQtyMangas")
-
                 img.setAttribute("src",cartArray[i].image)
                 priceinfo.innerHTML = `Precio: $${cartArray[i].price}`;
                 titleinfo.innerHTML = `Título:  ${cartArray[i].title}`;
@@ -133,9 +130,9 @@ export {salesScreen, buttonClicked, mangasStock, mangasInCart, arrayQty, buttonN
 
 // let buttonClicked = 0; Index of the manga in the cart
 
-// const mangasInCart = []; This array stores the stack value taken from cartArray, {this array will not be modified}.
+// const mangasInCart = []; This array stores the stock taken from cartArray, {this array will not be modified}.
 
-// let mangasStock = []; This array stores the stack value taken from cartArray, {this array is modified}.
+// let mangasStock = []; This array stores the stock taken from cartArray, {this array is modified}.
 
 // let arrayQty = []; This array stores other arrays that, in turn, store the number of items to buy divided by their index order
 
