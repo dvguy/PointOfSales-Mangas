@@ -41,9 +41,11 @@ function cartScreen(){
         fetch(url).then(response => {
         return response.json()
         }).then(json =>{
-            let {titulo,autor,precio,stock,img} = json[0][0];
-        
-            li.textContent = [`Titulo: ${titulo}  | Autor: ${autor}  | Precio: $${precio}  | En existencia: ${stock}`];;
+            let {name,author,price,stock,img} = json[0][0];
+           // let {titulo,autor,precio,stock,img} = json[0][0];
+          // li.textContent = [`Titulo: ${titulo}  | Autor: ${autor}  | Precio: $${precio}  | En existencia: ${stock}`];;
+
+            li.textContent = [`Titulo: ${name}  | Autor: ${author}  | Precio: $${price}  | En existencia: ${stock}`];;
             
             lista.append(li);
     
@@ -57,8 +59,9 @@ function cartScreen(){
                 existe = true
             }
 
-            cartArray.push({image: img, title: titulo, author: autor, price: precio,stock: stock})
-
+            cartArray.push({image: img, title: name, author: author, price: price,stock: stock})
+            //cartArray.push({image: img, title: titulo, author: autor, price: precio,stock: stock})
+            
 
         })
         .catch(() => {

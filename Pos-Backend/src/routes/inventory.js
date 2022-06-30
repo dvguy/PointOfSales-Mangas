@@ -107,12 +107,12 @@ router.get('/inventory/:param', (req, res) => { //Inventario es la tabla
 //     })
 // });
 
-router.put('/inventory/:titulo', (req,res) =>{
-    const {titulo} = req.params;
+router.put('/inventory/:name', (req,res) =>{
+    const {name} = req.params;
     const {stock} = req.body;
 
     const query = 'CALL mangasUpdate(?,?);'
-    connection.query(query, [titulo, stock], (err, rows, fields) => {
+    connection.query(query, [name, stock], (err, rows, fields) => {
         if(!err){
             res.json({status: "Stock Updated"});
         }else{
