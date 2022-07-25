@@ -10,6 +10,8 @@ const connection = require('../database');
 
 
 
+
+
 router.get('/inventory', (req, res) => { //Inventario es la tabla
     const {param} = req.body;
     connection.query('CALL BUSCAR(?)', [param], (err,rows,fields) => { //ROWS son los datos
@@ -23,7 +25,7 @@ router.get('/inventory', (req, res) => { //Inventario es la tabla
 
 
 router.get('/inventory/all', (req,res) => {
-    const query2 ='SELECT * FROM inventario'
+    const query2 ='SELECT * FROM inventory'
     connection.query(query2,(err,rows,fields)=>{
         if(!err){
             res.json(rows)
@@ -107,19 +109,36 @@ router.get('/inventory/:param', (req, res) => { //Inventario es la tabla
 //     })
 // });
 
-router.put('/inventory/:name', (req,res) =>{
-    const {name} = req.params;
-    const {stock} = req.body;
+// router.put('/inventory/:name', (req,res) =>{
+//     const {name} = req.params;
+//     const {stock} = req.body;
 
-    const query = 'CALL mangasUpdate(?,?);'
-    connection.query(query, [name, stock], (err, rows, fields) => {
+//     const query = 'CALL mangasUpdate(?,?);'
+//     connection.query(query, [name, stock], (err, rows, fields) => {
+//         if(!err){
+//             res.json({status: "Stock Updated"});
+//         }else{
+//             console.log(err);
+//         }
+//     });
+// });
+
+router.put('/inventory/:code', (req,res) =>{
+    const {code} = req.params;
+    const {stock} = req.body;
+    const {price} = req.body;
+
+    const query = 'CALL mangasUpdate2(?,?,?);'
+    const code2 = parseInt(code)
+    connection.query(query, [code2, stock, price], (err, rows, fields) => {
         if(!err){
-            res.json({status: "Stock Updated"});
+            res.json({status: "Stock Updated mangasUpdate2"});
         }else{
             console.log(err);
         }
     });
 });
+
 
 router.delete('/:titulo', (req,res) =>{
     const {autor, precio, stock} = req.body;

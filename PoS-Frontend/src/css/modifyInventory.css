@@ -24,3 +24,20 @@
 	padding-left: 1%;
 	padding-right: 1%;
 }
+
+#codeSender{
+	display: inline-block;
+	color: white;
+	font-family: my5Font;
+	font-size: 100%;
+	margin-top: -1.2%;
+    padding: 1%;
+	text-align: center;
+}
+
+#buttonModify{
+	background-color: yellow;
+	border: none;
+	font-family: my5Font;
+	cursor: pointer;
+}
