@@ -1,10 +1,10 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-        database: 'mangas',
-        host: 'localhost',
-        user: 'root',
-        password: ''
+    database: DB_PORT,
+    host: 'us-cdbr-east-06.cleardb.net',
+    user: 'b97f0322c56c75',
+    password: '48ed2a19'
 });
 
 

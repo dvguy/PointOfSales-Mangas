@@ -3,7 +3,7 @@ const express = require('express');
 /******************************MIDDLEWARE******************************** */
 
 const app = express();
-const port = process.env.port || 1000;
+const port = process.env.port || 3306;
 
 app.use(express.static(__dirname + '/'));
 
