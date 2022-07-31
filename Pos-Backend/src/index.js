@@ -1,9 +1,10 @@
 const express = require('express');
+require("dotenv").config();
 
 /******************************MIDDLEWARE******************************** */
 
 const app = express();
-const port = process.env.port || 3306;
+const port = process.env.PORT || 9999;
 
 app.use(express.static(__dirname + '/'));
 
