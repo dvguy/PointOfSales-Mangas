@@ -1,10 +1,13 @@
 const express = require('express');
-require("dotenv").config();
+
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
 
 /******************************MIDDLEWARE******************************** */
 
 const app = express();
-const port = process.env.PORT || 9999;
+const port = process.env.PORT || 1000;
 
 app.use(express.static(__dirname + '/'));
 

@@ -1,5 +1,7 @@
 import home from '../views/home.html';
 
+
+
 let amount = '';
 let mangaFound = new Set()
 let mangaFoundArray = [];
@@ -47,7 +49,7 @@ function searchScreen(){
 
         e.preventDefault()
         //let slash = "/"
-        let url =`http://127.0.0.1:1000/inventory/${input.value}`;
+        let url =`http://127.0.0.1:${process.env.PORT}/${input.value}`;
         fetch(url).then(response => {
         return response.json()
         }).then(json =>{
