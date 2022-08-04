@@ -1,2 +1,4 @@
 Pos-Backend/node_modules
 Pos-Frontend/node_modules
+.env
+frontend.env

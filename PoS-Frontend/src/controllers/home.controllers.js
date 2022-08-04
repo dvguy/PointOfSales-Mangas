@@ -47,7 +47,7 @@ function searchScreen(){
 
         e.preventDefault()
         //let slash = "/"
-        let url =`http://127.0.0.1:${process.env.PORT}/inventory/${input.value}`;
+        let url =`http://us-cdbr-east-06.cleardb.net:${process.env.PORT}/inventory/${input.value}`;
         fetch(url).then(response => {
         return response.json()
         }).then(json =>{

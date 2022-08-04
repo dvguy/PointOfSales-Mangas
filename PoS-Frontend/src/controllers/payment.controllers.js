@@ -68,7 +68,7 @@ function paymentScreen() {
 
 
     function getTicket(e){
-        let urlToGet =`http://127.0.0.1:1000/employees`;
+        let urlToGet =`http://127.0.0.1:${process.env.PORT}/employees`;
 
         fetch(urlToGet).then(response => {
         return response.json()
@@ -102,7 +102,7 @@ function paymentScreen() {
         "stock": amount - qty
     }
 
-    let url = 'http://localhost:1000/';
+    let url = `http://localhost:${process.env.PORT}/` ;
 
     function postTicket() {
         fetch(url, {
