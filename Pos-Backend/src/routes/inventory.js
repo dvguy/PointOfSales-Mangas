@@ -8,8 +8,9 @@ const express = require('express');
 const router = express.Router(); //Crea un objeto para poder definir rutas
 const connection = require('../database');
 
-
-
+// router.get('/', (req, res) => {
+//     console.log(req.headers)
+//   })
 
 
 router.get('/inventory', (req, res) => { //Inventario es la tabla
@@ -22,6 +23,13 @@ router.get('/inventory', (req, res) => { //Inventario es la tabla
         }
     })
 });
+
+// connection.query('Select * from inventory where name = "naruto"', function (err,rows){ //ROWS son los datos
+//     if(!err){
+//         console.log(rows)
+//     }
+// })
+
 
 
 router.get('/inventory/all', (req,res) => {

@@ -4,6 +4,7 @@
   "description": "Punto de venta de una tienda de manga",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
   "author": "",

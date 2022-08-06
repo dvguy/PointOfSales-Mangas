@@ -1,16 +1,20 @@
 const express = require('express');
-require("dotenv").config();
+
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
 
 /******************************MIDDLEWARE******************************** */
 
 const app = express();
-const port = process.env.PORT || 9999;
+const port = process.env.PORT || 1000;
 
 app.use(express.static(__dirname + '/'));
 
 app.use((req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
+    res.header('X-Forwarded-Proto', 'http')
     if (req.method === 'OPTIONS') {
     	res.header('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET, PATCH');
     	return res.status(200).json({});

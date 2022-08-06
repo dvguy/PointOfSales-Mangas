@@ -1,4 +1,5 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: 'development',
@@ -12,10 +13,31 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: 'index.html'
+        }),
+        
+        new Dotenv({
+          path: './frontend.env',
+
         })
+
     ],
 
+    resolve: {
+      fallback: {
+        "fs": false,
+        "tls": false,
+        "net": false,
+        "path": false,
+        "zlib": false,
+        "http": false,
+        "https": false,
+        "stream": false,
+        "os": false,
+      }
+      },
+
     module: {
+
         rules: [
           {
             test: /\.html$/i,
@@ -32,7 +54,6 @@ module.exports = {
           },
         ],
     },
-
 }
 
 //npx webpack serve

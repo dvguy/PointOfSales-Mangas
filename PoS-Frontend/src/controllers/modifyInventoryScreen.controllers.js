@@ -17,7 +17,7 @@ function modifyInventoryScreen () {
 
     function toDefineTheCodeOfMangaToModify(){
         let codeOfMangaToModify = inputCode.value; 
-        let url = `http://localhost:1000/inventory/${codeOfMangaToModify}`
+        let url = `http://localhost:${process.env.PORT}/inventory/${codeOfMangaToModify}`
 
         if (priceChangeValue != null && stockChangeValue != null){ //si noes cambiado el precio de manga se conserva el precio original
             mangasInventory[parseInt(inputCode.value)-1][2] = priceChangeValue
@@ -76,7 +76,7 @@ function modifyInventoryScreen () {
 
 try {
     function req(){
-        let url = 'http://localhost:1000/inventory/all';
+        let url = `http://localhost:${process.env.PORT}/inventory/all`;
 
         fetch(url).then( response => {
             return response.json()
