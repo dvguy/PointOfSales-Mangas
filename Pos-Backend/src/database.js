@@ -14,7 +14,7 @@ const connection = mysql.createPool({
 });
 
 
-
+console.log("ARRIBA")
 // const connection = mysql.createConnection({
 //     database: process.env.DATABASE,
 //     host: process.env.HOST,
