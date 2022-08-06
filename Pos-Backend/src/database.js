@@ -13,6 +13,8 @@ const connection = mysql.createPool({
   password: process.env.PASSWORD
 });
 
+
+
 // const connection = mysql.createConnection({
 //     database: process.env.DATABASE,
 //     host: process.env.HOST,
@@ -20,9 +22,10 @@ const connection = mysql.createPool({
 //     password: process.env.PASSWORD
 // });
 
-console.log(`EL DATABASE ES:${process.env.HOST}`)
-console.log(`VERIFICAR ${process.env.NODE_ENV}`)
+console.log(`EL HOST ES:${process.env.HOST}`)
+console.log(`VERIFICAR ENTORNO ${process.env.NODE_ENV}`)
 console.log(`EL USUARIO ES:${process.env.USER}`)
+console.log(`EL DATABASE ES:${process.env.DATABASE}`)
 
 
 connection.getConnection(function(err) {
