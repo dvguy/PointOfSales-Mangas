@@ -48,12 +48,12 @@ function searchScreen(){
         e.preventDefault()
         //let slash = "/"
         //let url =`http://us-cdbr-east-06.cleardb.net:3306/inventory/${input.value}`;
-        let url =`http://us-cdbr-east-06.cleardb.net:3306/inventory/all`;
-        // let url =`http://localhost:9999/inventory/all`;
+        // let url =`http://us-cdbr-east-06.cleardb.net:3306/inventory/all`;
+        let url =`http://localhost:9999/inventory/${input.value}`;
 
         fetch(url).then(response => {
-        // return response.json()
-        console.log(response.json())
+        return response.json()
+        // console.log(response.json())
         }).then(json =>{
             let {name,author,price,stock,img} = json[0][0];
             //let {titulo,autor,precio,stock,img} = json[0][0];
