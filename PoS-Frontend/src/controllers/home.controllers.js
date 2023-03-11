@@ -22,7 +22,7 @@ function searchScreen(){
     const button1 = divElement.querySelector('#btn1');
     const button2 = divElement.querySelector('#btn2');
     const li = divElement.querySelector('#li');
-    const btnToInventory = divElement.querySelector('#btnModifyInventory')
+    // const btnToInventory = divElement.querySelector('#btnModifyInventory')
 
     function refresh() {
         location.reload();
@@ -108,7 +108,7 @@ function searchScreen(){
 
     btn.addEventListener("click", req );
 
-    btnToInventory.addEventListener('click', sendToInventory);
+    // btnToInventory.addEventListener('click', sendToInventory);
 
     return divElement
 }

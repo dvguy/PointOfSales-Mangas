@@ -10,6 +10,18 @@
 	width: 18%;
 }
 
+.paragraphHome{
+	background-color: #70ea2a;
+	border-color: #2d2aea;
+	color: black;
+	cursor: pointer;
+	font-size: 70%;
+	font-family: my5Font;
+    margin-top: 3%;
+	outline: none;
+	width: 18%;
+}
+
 #btn{
 	background-color: #eaea2a;
 	border-color: #eaea2a;

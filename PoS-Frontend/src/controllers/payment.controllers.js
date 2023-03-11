@@ -68,7 +68,9 @@ function paymentScreen() {
 
 
     function getTicket(e){
-        let urlToGet =`http://127.0.0.1:${process.env.PORT}/employees`;
+      //  let url_1 = `http://127.0.0.1:${process.env.PORT}/employees`
+        let url_2 = `http://localhost:9999/employees`
+        let urlToGet = url_2 ;
 
         fetch(urlToGet).then(response => {
         return response.json()
@@ -97,12 +99,13 @@ function paymentScreen() {
         hour : hour,
         name : "Ander"
     }
-
     let newStockForTheDataBase = {
         "stock": amount - qty
     }
+    console.log(newStockForTheDataBase)
 
-    let url = `http://localhost:${process.env.PORT}/` ;
+    //let url = `http://localhost:${process.env.PORT}/` ;
+    let url = `http://localhost:9999/` ;
 
     function postTicket() {
         fetch(url, {
@@ -141,6 +144,7 @@ function paymentScreen() {
        }
     }
     
+
     
     btn_payment_screen.addEventListener('click', postTicket);
     btn_payment_screen.addEventListener('click', modifyStock);

@@ -3,14 +3,15 @@
 //la ruta que se toma en el url es let url =`http://127.0.0.1:1000${slash}${input.value}`;
 //esto lo podemos ver en Pos-Frontend/controllers/home.controllers.js
 
+//This is the link point with the DB here are defined the routesof
+//communication with the DB. If we comment it no longer works pos man
+//the route that is taken in the url is let url =`http://127.0.0.1:1000${slash}${input.value}`;
+//this we can see it in Pos-Frontend/controllers/home.controllers.js
 
 const express = require('express');
 const router = express.Router(); //Crea un objeto para poder definir rutas
 const connection = require('../database');
 
-// router.get('/', (req, res) => {
-//     console.log(req.headers)
-//   })
 
 
 router.get('/inventory', (req, res) => { //Inventario es la tabla
@@ -23,13 +24,6 @@ router.get('/inventory', (req, res) => { //Inventario es la tabla
         }
     })
 });
-
-// connection.query('Select * from inventory where name = "naruto"', function (err,rows){ //ROWS son los datos
-//     if(!err){
-//         console.log(rows)
-//     }
-// })
-
 
 
 router.get('/inventory/all', (req,res) => {
@@ -94,58 +88,36 @@ router.get('/inventory/:param', (req, res) => { //Inventario es la tabla
     })
 });
 
-// router.put('/inventory/', (req, res) => { //Inventario es la tabla
-//     const {oldStock, newStock} = req.body;
-//     connection.query('UPDATE `inventario` SET `stock` = (?) WHERE `inventario`.`code_element` = (?)', [oldStock, newStock], (err,rows,fields) => { //ROWS son los datos
-//         if(!err){
-//             res.json(rows)
-//         }else{
-//             console.log(rows);
-//         }
-//     })
-// });
 
-// router.post('/', (req, res) =>{
-//     const {titulo, autor, precio, stock} = req.body;
-//     const query = 'CALL mangaAdd(?,?,?,?);';
-//     connection.query(query, [titulo, autor, precio, stock], (err, rows, fields) => {
-//         if(!err){
-//             res.json({status: 'Manga Added'});
-//         }else{
-//             console.log(err);
-//         }
-//     })
-// });
-
-// router.put('/inventory/:name', (req,res) =>{
-//     const {name} = req.params;
-//     const {stock} = req.body;
-
-//     const query = 'CALL mangasUpdate(?,?);'
-//     connection.query(query, [name, stock], (err, rows, fields) => {
-//         if(!err){
-//             res.json({status: "Stock Updated"});
-//         }else{
-//             console.log(err);
-//         }
-//     });
-// });
-
-router.put('/inventory/:code', (req,res) =>{
-    const {code} = req.params;
+router.put('/inventory/:name', (req,res) =>{
+    const {name} = req.params;
     const {stock} = req.body;
-    const {price} = req.body;
 
-    const query = 'CALL mangasUpdate2(?,?,?);'
-    const code2 = parseInt(code)
-    connection.query(query, [code2, stock, price], (err, rows, fields) => {
+    const query = 'CALL mangasUpdate(?,?);'
+    connection.query(query, [name, stock], (err, rows, fields) => {
         if(!err){
-            res.json({status: "Stock Updated mangasUpdate2"});
+            res.json({status: "Stock Updated"});
         }else{
             console.log(err);
         }
     });
 });
+
+// router.put('/inventory/:code', (req,res) =>{
+//     const {code} = req.params;
+//     const {stock} = req.body;
+//     const {price} = req.body;
+    
+//     const query = 'CALL mangasUpdate2(?,?,?);'
+//     const code2 = parseInt(code)
+//     connection.query(query, [code2, stock, price], (err, rows, fields) => {
+//         if(!err){
+//             res.json({status: "Stock Updated mangasUpdate2"});
+//         }else{
+//             console.log(err);
+//         }
+//     });
+// });
 
 
 router.delete('/:titulo', (req,res) =>{
@@ -160,8 +132,6 @@ router.delete('/:titulo', (req,res) =>{
     })
 });
 
-
-// Necesito substraer {cantidad comprada del manga} segun el codigo del o de los manga comprado
 
 
 module.exports = router;
